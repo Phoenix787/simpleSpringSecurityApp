@@ -8,6 +8,10 @@ import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Implementation {@link UserDetails} interface
+ */
+
 public class CustomUserDetails extends  Users implements UserDetails {
 
     public CustomUserDetails(final Users user){
@@ -17,7 +21,6 @@ public class CustomUserDetails extends  Users implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-
 
         return getRoles()
                 .stream().map(role -> new SimpleGrantedAuthority("ROLE_" + role.getRole()))

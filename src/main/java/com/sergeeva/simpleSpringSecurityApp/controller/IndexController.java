@@ -14,8 +14,6 @@ import java.util.Map;
 
 @RestController
 public class IndexController {
-    @Autowired
-    StudentService studentService;
 
     @RequestMapping("/")
     public ModelAndView index() {
